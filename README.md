@@ -1,6 +1,53 @@
-# connect-form-with-firestore
+# Connect vue with FireStore
 
-## Project setup
+## The Case Study
+
+This repo allows user to fill data in a form and auto sync it with Google Cloud Firestore. On successful update Google Fire Function calculates form completion progress which get synched with front-end Client as well.
+
+## Test Assignment
+
+### Problem Statement & Requirements
+
+Build a form with 5 fields with auto save ability and show the percentage of form completion to the user. Assume each field accounts for 20% of the form.
+
+### Technical requirements
+
+*- [TailwindCSS]( https://tailwindcss.com/) for design and UI
+*- Cloud [Firestore]( https://firebase.google.com/docs/firestore) as database
+*- [Vue](https://vuejs.org/) and [Vuexfire](https://vuefire.vuejs.org/vuexfire/) to save data in the database
+
+## Approach & Reasons
+
+#### Setup
+Easiest way to setup Vue application is to use Vue Cli so I used npm and Vue cli to install required package.
+
+##### Commands
+
+Install Vue CLI
+```
+npm install -g @vue/cli
+```
+
+Install Firebase, Tailwind, and vuefire
+```
+npm install vuefire firebase tailwindcss
+```
+#### Vuefireplugin setup
+
+VuefirePlugin is setup using firebase SDK. For two way declarative data binding Firestore callback is used.  
+
+#### Database setup
+Created Collection on Fire Store (Google Cloud) in test mode.
+
+#### Auto save
+Storing data on cloud is costly operation. Google limits the number of operations/sec and charge for write operations. Write a method the handles changes to the form. Debounce the call to Firestore to prevent excessive writes to the database that could cost money and/or exceed Firestore’s rate limits.
+
+#### Google Cloud Function
+Written Google cloud function to calculate completion percentage. deployed it on cloud using firebase cli.
+
+## Cloning this repo
+
+### Project setup
 ```
 npm install
 ```
@@ -19,6 +66,3 @@ npm run build
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
