@@ -12,13 +12,14 @@ Build a form with 5 fields with auto save ability and show the percentage of for
 
 ### Technical requirements
 
-*- [TailwindCSS]( https://tailwindcss.com/) for design and UI
-*- Cloud [Firestore]( https://firebase.google.com/docs/firestore) as database
-*- [Vue](https://vuejs.org/) and [Vuexfire](https://vuefire.vuejs.org/vuexfire/) to save data in the database
+* - [TailwindCSS]( https://tailwindcss.com/) for design and UI
+* - Cloud [Firestore]( https://firebase.google.com/docs/firestore) as database
+* - [Vue](https://vuejs.org/) and [Vuexfire](https://vuefire.vuejs.org/vuexfire/) to save data in the database
 
 ## Approach & Reasons
 
 #### Setup
+
 Easiest way to setup Vue application is to use Vue Cli so I used npm and Vue cli to install required package.
 
 ##### Commands
@@ -37,15 +38,20 @@ npm install vuefire firebase tailwindcss
 VuefirePlugin is setup using firebase SDK. For two way declarative data binding Firestore callback is used.  
 
 #### Database setup
-Created Collection on Fire Store (Google Cloud) in test mode.
+
+Created Collection on Fire Store (Google Cloud) in test mode. Test mode allows to perform read/write activities without auth credentials. (It is not recommended to use it in production.) 
 
 #### Auto save
+
 Storing data on cloud is costly operation. Google limits the number of operations/sec and charge for write operations. Write a method the handles changes to the form. Debounce the call to Firestore to prevent excessive writes to the database that could cost money and/or exceed Firestore’s rate limits.
 
 #### Google Cloud Function
-Written Google cloud function to calculate completion percentage. deployed it on cloud using firebase cli.
 
-## Cloning this repo
+Written Google cloud onWrite trigger function to calculate completion percentage and deployed it on cloud using firebase cli.
+
+## Local setup
+
+Follow these steps to setup this project on local machine after cloning this repo. 
 
 ### Project setup
 ```
