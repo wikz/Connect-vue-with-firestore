@@ -41,10 +41,12 @@ export default {
     Heading,
   },
 
+  // Event binding
   beforeMount() {
     window.addEventListener("beforeunload", this.preventNav);
   },
 
+  // Event unbinding
   beforeDestroy() {
     window.removeEventListener("beforeunload", this.preventNav);
   },
@@ -60,6 +62,8 @@ export default {
       }
     },
 
+    // Displays undaved data message on page unload
+    // Checks state of form and displays message if it's modified
     preventNav: function() {
       if (this.state === STATES.SYNCED) return;
       event.preventDefault();

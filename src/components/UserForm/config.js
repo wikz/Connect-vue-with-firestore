@@ -1,7 +1,7 @@
 const config = {
   collection: 'users',
   doc: 'user1',
-  debounceTime: 2500
+  debounceTime: 1400
 };
 
 const STATES = {

@@ -1,4 +1,4 @@
-# Connect vue with FireStore
+# Connect Vue with FireStore
 
 ## The Case Study
 This repo allows user to fill data in a form and auto sync it with Google Cloud Firestore. On successful update Google Fire Function calculates form completion progress which get synched with front-end Client as well.
@@ -10,9 +10,9 @@ Build a form with 5 fields with auto save ability and show the percentage of for
 
 ### Technical requirements
 
-* - [TailwindCSS]( https://tailwindcss.com/) for design and UI
-* - Cloud [Firestore]( https://firebase.google.com/docs/firestore) as database
-* - [Vue](https://vuejs.org/) and [Vuexfire](https://vuefire.vuejs.org/vuexfire/) to save data in the database
+* [TailwindCSS]( https://tailwindcss.com/) for design and UI
+* Cloud [Firestore]( https://firebase.google.com/docs/firestore) as database
+* [Vue](https://vuejs.org/) and [Vuexfire](https://vuefire.vuejs.org/vuexfire/) to save data in the database
 
 ## Approach & Reasons
 
